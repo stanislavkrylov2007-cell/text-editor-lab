@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "id": "example1",
+      "title": "Пример документа",
+      "blocks": [
+        {"id": "head1", "kind": "heading", "text": "Мой текст", "level": 1},
+        {"id": "para1", "kind": "paragraph", "text": "Редактор сохраняет документы в JSON и XML."},
+        {"id": "quote1", "kind": "quote", "text": "Пример цитаты"},
+        {"id": "list1", "kind": "list_item", "text": "Пункт списка"}
+      ]
+    }
+  ]
+}

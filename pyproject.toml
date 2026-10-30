@@ -1,0 +1,11 @@
+[project]
+name = "text-editor-lab"
+version = "1.0.0"
+description = "Лабораторная работа №1, вариант 16: текстовый редактор"
+requires-python = ">=3.10"
+
+[project.scripts]
+text-editor = "text_editor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
