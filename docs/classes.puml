@@ -1,0 +1,73 @@
+@startuml
+title Вариант 16 — текстовый редактор
+skinparam classAttributeIconSize 0
+
+abstract class Storage {
+  +load(path): DocumentCatalog
+  +save(path, catalog): None
+}
+class JsonStorage
+class XmlStorage
+Storage <|-- JsonStorage
+Storage <|-- XmlStorage
+
+class DocumentCatalog {
+  -_documents: dict
+  +add(document): None
+  +get(id): Document
+  +list(): list
+  +rename(id, title): Document
+  +delete(id): None
+}
+class Document {
+  +id: str
+  +title: str
+  +blocks: list
+  +render(): str
+}
+class Editor {
+  +add_block(doc_id, block): None
+  +get_block(doc_id, block_id): TextBlock
+  +update_block(doc_id, block_id, text): TextBlock
+  +delete_block(doc_id, block_id): None
+  +search(query): list
+}
+class SearchResult
+class EditorCLI
+class TextBlock {
+  +id: str
+  +text: str
+  +render(): str
+}
+class Paragraph
+class Heading {
+  +level: int
+}
+class Quote
+class ListItem
+TextBlock <|-- Paragraph
+TextBlock <|-- Heading
+TextBlock <|-- Quote
+TextBlock <|-- ListItem
+DocumentCatalog "1" o-- "*" Document
+Document "1" o-- "*" TextBlock
+Editor --> DocumentCatalog
+Editor ..> SearchResult
+EditorCLI --> Editor
+EditorCLI --> Storage
+Storage ..> DocumentCatalog
+
+class EditorError <<exception>>
+class ValidationError <<exception>>
+class NotFoundError <<exception>>
+class FormatError <<exception>>
+class ConflictError <<exception>>
+EditorError <|-- ValidationError
+EditorError <|-- NotFoundError
+EditorError <|-- FormatError
+EditorError <|-- ConflictError
+Editor ..> ValidationError
+Editor ..> NotFoundError
+DocumentCatalog ..> ConflictError
+Storage ..> FormatError
+@enduml
