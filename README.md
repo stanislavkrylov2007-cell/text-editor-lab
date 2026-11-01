@@ -12,7 +12,7 @@
 | `storage.py` | Чтение и запись JSON/XML |
 | `exceptions.py` | Собственные исключения |
 | `docs/classes.puml` | UML-диаграмма, включая исключения |
-| `data/sample.json` | Пример данных |
+| `data/sample.json`, `data/sample.xml` | Один и тот же пример данных в двух форматах |
 
 ## Запуск
 

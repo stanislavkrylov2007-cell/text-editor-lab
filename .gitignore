@@ -6,4 +6,5 @@ __pycache__/
 data/*.json
 data/*.xml
 !data/sample.json
+!data/sample.xml
 tmp*/

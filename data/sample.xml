@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<documents>
+  <document id="example1" title="Пример документа">
+    <block id="head1" kind="heading" level="1">Мой текст</block>
+    <block id="para1" kind="paragraph">Редактор сохраняет документы в JSON и XML.</block>
+    <block id="quote1" kind="quote">Пример цитаты</block>
+    <block id="list1" kind="list_item">Пункт списка</block>
+  </document>
+</documents>
