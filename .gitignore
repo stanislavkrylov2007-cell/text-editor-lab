@@ -3,5 +3,7 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 .venv/
-data/
+data/*.json
+data/*.xml
+!data/sample.json
 tmp*/

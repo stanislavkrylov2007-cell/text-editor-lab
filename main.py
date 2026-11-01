@@ -6,9 +6,10 @@ import argparse
 import sys
 from pathlib import Path
 
-from .model import (BLOCK_TYPES, Document, DocumentCatalog, Editor,
-                    EditorError, Heading)
-from .storage import JsonStorage, storage_for
+from exceptions import EditorError
+from models import BLOCK_TYPES, Document, Heading
+from service import DocumentCatalog, Editor
+from storage import JsonStorage, storage_for
 
 
 class EditorCLI:

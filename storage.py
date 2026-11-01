@@ -7,8 +7,9 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-from .model import (BLOCK_TYPES, Document, DocumentCatalog, FormatError,
-                    TextBlock, ValidationError)
+from exceptions import FormatError, ValidationError
+from models import BLOCK_TYPES, Document, TextBlock
+from service import DocumentCatalog
 
 
 def block_to_dict(block: TextBlock) -> dict:
